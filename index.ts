@@ -6,6 +6,7 @@ appDiv.innerHTML = `<h1>TypeScript Starter</h1>`;
 
 const s = new Subject<number>();
 s.subscribe(n => console.log(n));
+s.subscribe(n => appDiv.innerHTML += `<br>${n}`);
 s.next(1);
 s.next(2);
 
@@ -29,5 +30,6 @@ export class MySubject<T> {
 
 const ms = new MySubject<number>();
 ms.subscribe(n => console.log(n));
+ms.subscribe(n => appDiv.innerHTML += `<br>${n}`);
 ms.next(3);
 ms.next(4);
