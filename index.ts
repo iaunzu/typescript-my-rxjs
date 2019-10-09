@@ -22,8 +22,8 @@ export class MySubject<T> {
   }
   
   next(t: T) {
-    this.observers.forEach(o => {
-      o.call(this, t);
+    this.observers.forEach(obs => {
+      obs(t);
     })
   }
 }
